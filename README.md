@@ -45,7 +45,7 @@ The findings from this project directly support MasterControl's goal of increasi
 - **Channel strategy**: Email and External Demand Gen dominate among well-enriched MX leads, while digital/inbound channels (Online Ads, SEO, Directory Listing) produce a higher share of low-enrichment leads.
 - **Website improvements**: The concentration of low-enrichment leads from inbound digital channels suggests that the MasterControl website's data-capture forms may not be collecting sufficient qualifying information from visitors.
 
-In production, these findings translate into a smarter lead scoring model that prioritizes well-enriched accounts in the right industries — allowing Sales to spend time on leads that are statistically more likely to convert.
+In production, these findings translate into a smarter lead scoring model that prioritizes well enriched accounts in the right industries, allowing Sales to spend time on leads that are statistically more likely to convert.
 
 ---
 
