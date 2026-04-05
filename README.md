@@ -10,9 +10,9 @@ Leadership believes the current targeting strategy sends sales teams after leads
 
 ## 2. Our Group's Solution
 
-Our team built an interpretable lead scoring framework using MasterControl's internal QAL data — 16,644 records spanning early 2024 through early 2026. The goal was to identify which contact profiles and account characteristics are most likely to convert for the MX product.
+Our team built an interpretable lead scoring framework using MasterControl's internal QAL data, 16,644 records spanning early 2024 through early 2026. The goal was to identify which contact profiles and account characteristics are most likely to convert for the MX product.
 
-We started with EDA to understand data quality and uncover patterns in lead progression across industries, job titles, account tiers, territories, and marketing channels. From there, we engineered features to capture enrichment quality and contact profiles, then compared multiple classification models — logistic regression, random forest, and gradient boosting — using ROC-AUC as the primary evaluation metric. The final model generates probability scores for individual leads, producing a ranked prioritization list that Sales can act on directly. Feature importance analysis was included to keep the model's logic transparent and actionable.
+We started with EDA to understand data quality and uncover patterns in lead progression across industries, job titles, account tiers, territories, and marketing channels. From there, we engineered features to capture enrichment quality and contact profiles, then compared multiple classification models: logistic regression, random forest, and EBM, using ROC-AUC as the primary evaluation metric. The final model generates probability scores for individual leads, producing a ranked prioritization list that Sales can act on directly. Feature importance analysis was included to keep the model's logic transparent and actionable.
 
 The deliverable is a set of targeting recommendations: the industries and job titles MX sales reps should prioritize, along with suggestions for improving data capture on the MasterControl website.
 
@@ -20,9 +20,9 @@ The deliverable is a set of targeting recommendations: the industries and job ti
 
 ## 3. My Individual Contributions
 
-My work spanned both the EDA and modeling phases. On the EDA side, I handled data setup and cleaning — building a `recipes`-based pipeline in R to standardize placeholder values like "Not Enough Info Found" and "Unknown" into a consistent "Low Info" category, so incomplete records could be treated as a signal rather than dropped. From there, I identified a clear pattern: Low Info leads are not randomly distributed. They concentrate in digital/inbound channels, Non-Life Science accounts, smaller account tiers, and EMEA, and they convert at significantly lower rates than well-enriched leads.
+My work spanned both the EDA and modeling phases. On the EDA side, I handled data setup and cleaning, building a `recipes` based pipeline in R to standardize placeholder values like "Not Enough Info Found" and "Unknown" into a consistent "Low Info" category, so incomplete records could be treated as a signal rather than dropped. From there, I identified a clear pattern: Low Info leads are not randomly distributed. They concentrate in digital/inbound channels, Non-Life Science accounts, smaller account tiers, and EMEA, and they convert at significantly lower rates than well-enriched leads.
 
-On the modeling side, I built the **baseline logistic regression** model, which established the performance benchmark all other models were compared against (ROC-AUC of 0.71), and the **decision tree**, which achieved a ROC-AUC of 0.758 and surfaced the most actionable business insights — showing that priority tier is by far the strongest predictor of MX success, followed by account site function and campaign channel. I also wrote the interpretations for both models.
+On the modeling side, I built the **baseline logistic regression** model, which established the performance benchmark all other models were compared against (ROC-AUC of 0.71), and the **decision tree**, which achieved a ROC-AUC of 0.758 and surfaced the most actionable business insights, showing that priority tier is by far the strongest predictor of MX success, followed by account site function and campaign channel. I also wrote the interpretations for both models.
 
 My individual notebooks are in the `/portfolio` folder of this repo.
 
@@ -40,7 +40,7 @@ To reproduce the analysis, you would need access to the original `Mastercontrol 
 
 The findings from this project directly support MasterControl's goal of increasing MX lead progression from **12.7% toward 16–18%**:
 
-- **Data completeness as a filter**: Leads with incomplete enrichment (site function or manufacturing model missing) progress at under 1% for MX. Deprioritizing these leads — or improving data capture at the point of entry — would immediately improve resource efficiency.
+- **Data completeness as a filter**: Leads with incomplete enrichment (site function or manufacturing model missing) progress at under 1% for MX. Deprioritizing these leads, or improving data capture at the point of entry — would immediately improve resource efficiency.
 - **Industry targeting**: Pharma & BioTech and Medical Device accounts make up the vast majority of high-enrichment, high-progression MX leads. Non-Life Science accounts are disproportionately associated with low-enrichment records and lower conversion.
 - **Channel strategy**: Email and External Demand Gen dominate among well-enriched MX leads, while digital/inbound channels (Online Ads, SEO, Directory Listing) produce a higher share of low-enrichment leads.
 - **Website improvements**: The concentration of low-enrichment leads from inbound digital channels suggests that the MasterControl website's data-capture forms may not be collecting sufficient qualifying information from visitors.
@@ -60,7 +60,7 @@ In production, these findings translate into a smarter lead scoring model that p
 
 ## 7. What I Learned
 
-This project pushed me to think about data quality differently — missing values aren't just a problem to fix, they can tell you something meaningful about the data itself. Building the cleaning pipeline and tracing the Low Info pattern to specific channels and industries made that concrete.
+This project pushed me to think about data quality differently,  missing values aren't just a problem to fix, they can tell you something meaningful about the data itself. Building the cleaning pipeline and tracing the Low Info pattern to specific channels and industries made that concrete.
 
 On the modeling side, starting with a baseline before jumping to more complex models was a good discipline I'll carry forward. The decision tree also reminded me that interpretability matters, especially when the audience is a business team rather than a technical one.
 
