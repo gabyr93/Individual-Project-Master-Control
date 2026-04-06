@@ -2,7 +2,7 @@
 
 ## 1. Business Problem & Objective
 
-MasterControl is a SaaS company offering two core product suites: **QX** (Quality Solutions, 20+ years on the market) and **MX** (Manufacturing Solutions, launched ~4 years ago). MX significantly underperforms QX in converting leads:12.7% progression rate vs. 19.7% for QX.
+MasterControl is a SaaS company offering two core product suites: **QX** (Quality Solutions, 20+ years on the market) and **MX** (Manufacturing Solutions, launched 4 years ago). MX significantly underperforms QX in converting leads:12.7% progression rate vs. 19.7% for QX.
 
 Leadership believes the current targeting strategy sends sales teams after leads that are unlikely to convert, creating missed revenue opportunities and wasting resources. The objective of this project was to identify which industries, company characteristics, and job titles are associated with higher MX lead progression so that Sales and Marketing can prioritize more effectively.
 
