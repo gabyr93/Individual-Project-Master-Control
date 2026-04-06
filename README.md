@@ -2,9 +2,9 @@
 
 ## 1. Business Problem & Objective
 
-MasterControl is a SaaS company offering two core product suites: **QX** (Quality Solutions, 20+ years on the market) and **MX** (Manufacturing Solutions, launched ~4 years ago). MX significantly underperforms QX in converting leads: **12.7% progression rate vs. 19.7%** for QX.
+MasterControl is a SaaS company offering two core product suites: **QX** (Quality Solutions, 20+ years on the market) and **MX** (Manufacturing Solutions, launched ~4 years ago). MX significantly underperforms QX in converting leads:12.7% progression rate vs. 19.7% for QX.
 
-Leadership believes the current targeting strategy sends sales teams after leads that are unlikely to convert — creating missed revenue opportunities and wasting resources. The objective of this project was to identify which industries, company characteristics, and job titles are associated with higher MX lead progression so that Sales and Marketing can prioritize more effectively.
+Leadership believes the current targeting strategy sends sales teams after leads that are unlikely to convert, creating missed revenue opportunities and wasting resources. The objective of this project was to identify which industries, company characteristics, and job titles are associated with higher MX lead progression so that Sales and Marketing can prioritize more effectively.
 
 ---
 
@@ -22,7 +22,7 @@ The deliverable is a set of targeting recommendations: the industries and job ti
 
 My work spanned both the EDA and modeling phases. On the EDA side, I handled data setup and cleaning, building a `recipes` based pipeline in R to standardize placeholder values like "Not Enough Info Found" and "Unknown" into a consistent "Low Info" category, so incomplete records could be treated as a signal rather than dropped. From there, I identified a clear pattern: Low Info leads are not randomly distributed. They concentrate in digital/inbound channels, Non-Life Science accounts, smaller account tiers, and EMEA, and they convert at significantly lower rates than well-enriched leads.
 
-On the modeling side, I built the **baseline logistic regression** model, which established the performance benchmark all other models were compared against (ROC-AUC of 0.71), and the **decision tree**, which achieved a ROC-AUC of 0.758 and surfaced the most actionable business insights, showing that priority tier is by far the strongest predictor of MX success, followed by account site function and campaign channel. I also wrote the interpretations for both models.
+On the modeling side, I built the baseline logistic regression model, which established the performance benchmark all other models were compared against (ROC-AUC of 0.71), and the decision tree, which achieved a ROC-AUC of 0.758 and surfaced the most actionable business insights, showing that priority tier is by far the strongest predictor of MX success, followed by account site function and campaign channel. I also wrote the interpretations for both models.
 
 My individual notebooks are in the `/portfolio` folder of this repo.
 
@@ -30,7 +30,7 @@ My individual notebooks are in the `/portfolio` folder of this repo.
 
 ## 4. Data Source & Reproducibility
 
-This project uses proprietary MasterControl QAL data provided for the case competition. The dataset is **not included in this repository** per competition and data privacy guidelines.
+This project uses proprietary MasterControl QAL data provided for the case competition. The dataset is not included in this repository per competition and data privacy guidelines.
 
 To reproduce the analysis, you would need access to the original `Mastercontrol QAL Performance.csv` file. Notebooks assume it is loaded from a local path. The data dictionary (`MasterControl_Final_QAL_Performance_Data_Dictionary.docx`) describes all variables and their expected missingness levels.
 
@@ -38,7 +38,7 @@ To reproduce the analysis, you would need access to the original `Mastercontrol 
 
 ## 5. Business Value
 
-The findings from this project directly support MasterControl's goal of increasing MX lead progression from **12.7% toward 16–18%**:
+The findings from this project directly support MasterControl's goal of increasing MX lead progression from 12.7% toward 16–18%:
 
 - **Data completeness as a filter**: Leads with incomplete enrichment (site function or manufacturing model missing) progress at under 1% for MX. Deprioritizing these leads, or improving data capture at the point of entry — would immediately improve resource efficiency.
 - **Industry targeting**: Pharma & BioTech and Medical Device accounts make up the vast majority of high-enrichment, high-progression MX leads. Non-Life Science accounts are disproportionately associated with low-enrichment records and lower conversion.
